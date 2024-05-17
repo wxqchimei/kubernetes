@@ -107,7 +107,7 @@ func New(endpoints []string, ca, cert, key string) (*Client, error) {
 
 	var err error
 	var tlsConfig *tls.Config
-	if ca != "" || cert != "" || key != "" {
+	if ca != "" && cert != "" && key != "" {
 		tlsInfo := transport.TLSInfo{
 			CertFile:      cert,
 			KeyFile:       key,
